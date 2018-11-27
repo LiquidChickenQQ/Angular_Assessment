@@ -15,18 +15,18 @@ export class AppComponent implements OnInit  {
   starwars: Object;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private filmsService: FilmsService,
     private peopleService: PeopleService,
     private shipsService: ShipsService) { }
 
   ngOnInit() {
-    this.myForm = this.fb.group({
+    this.myForm = this.formBuilder.group({
       menu: new FormControl(),
       getData: new FormControl(),
     })
   }
-  clickIt() {
+  submit() {
     if (this.myForm.value.menu === 'films') {
       this.filmsService.getFilms(this.myForm.value.getData)
         .subscribe(data => {

@@ -2,7 +2,7 @@
   <h1>
     Welcome to my {{ title }}!
   </h1>
-  <form [formGroup]="myForm" (ngSubmit)='clickIt()'>
+  <form [formGroup]="myForm" (ngSubmit)='submit()'>
 
     <hr>
     <select class="dropDown" formControlName="menu">
@@ -48,7 +48,6 @@
           <p>{{ data.length }}</p>
           <p>{{ data.max_atmosphering_speed }}</p>
           <p>{{ data.crew }}</p>
-          <p>{{ data.pilots }}</p>
           <p>{{ data.passengers }}</p>
           <p>{{ data.cargo_capacity }}</p>
           <p>{{ data.consumables }}</p>
@@ -57,7 +56,6 @@
           <p>{{ data.starship_class }}</p>
         </div>
       </div>
-      
     </div>
   </div>
 </div>
